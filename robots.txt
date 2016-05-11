@@ -1,9 +1,9 @@
 # hexo robots.txt
 User-agent: *
 Allow: /
-Allow: /archives/
 Allow: /categories/
 Allow: /about/
+Allow: /archives/
 
 Disallow: /vendors/
 Disallow: /js/

@@ -110,7 +110,7 @@
   };
 </script>
 
-  <title> Archive | Tengfei's Notes </title>
+  <title> Tengfei's Notes - Embracing The Unknown. </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -140,7 +140,9 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,104 +239,276 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+  <section id="posts" class="posts-expand">
+    
+      
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  
+  
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      Um..! 2 posts in total. Keep on posting.
-    </span>
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
 
-      
-      
-      
-
-      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/10/Hexo和GitHub搭建Blog中用到的服务/" itemprop="url">
+                  Hexo和GitHub搭建Blog中用到的服务
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-10T18:31:58-04:00" content="2016-05-10">
+              2016-05-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/10/Hexo和GitHub搭建Blog中用到的服务/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/10/Hexo和GitHub搭建Blog中用到的服务/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/10/Hexo和GitHub搭建Blog中用到的服务/" class="leancloud_visitors" data-flag-title="Hexo和GitHub搭建Blog中用到的服务">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+               <span class="post-meta-item-text">Views </span>
+              </span>
+          
+
+          
         </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
         
-            <a class="post-title-link" href="/2016/05/10/Hexo和GitHub搭建Blog中用到的服务/" itemprop="url">
-              
-                <span itemprop="name">Hexo和GitHub搭建Blog中用到的服务</span>
-              
+          <p>  最近用<em>Hexo</em>和<em>GitHub panges</em>搭建了一个静态博客，用了<strong>Next</strong>的主题，其中还是用到了很多第三方服务的。现在基本完成了，接下来就是要持续的写下去了，现在总结一下用到的第三方服务和相应的网站。</p>
+<h5 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h5><p>这里可选<a href="http://duoshuo.com/">多说</a>或<a href="https://disqus.com/home/explore/">DISQUS</a>来支持评论功能，不过这两个好像是一个英文版一个中文版的区别，可以自行选用吧。编辑 <strong>站点.yml</strong> 文件中添加下面一行代码。</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">disqus_shortname</span>: your-disqus-shortname</span><br></pre></td></tr></table></figure>
+<p>我选择的是DISQUS，因为想把网站做成英文版本，评论框里的按钮文本默认是中文的，看起来有点别扭，虽然也可以在多说网站进行自定义但是有点满帆，索性直接用了DISQUE方便。</p>
+<h5 id="数据统计与分析"><a href="#数据统计与分析" class="headerlink" title="数据统计与分析"></a>数据统计与分析</h5><p>本Blog选用的是<a href="https://analytics.google.com/analytics/web/">Google Analysis</a>主要是用来对整个网站的流量做一个统计和观察。<br>编辑 <strong>站点.yml</strong> 文件，新增字段 google_analytics， 值设置成你的 Google 跟踪 ID。跟踪 ID 通常是以 UA- 开头。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/10/Hexo和GitHub搭建Blog中用到的服务/#more" rel="contents">
+              Read more &raquo;
             </a>
+          </div>
         
-      </h1>
+      
+    </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-10T18:31:58-04:00"
-              content="2016-05-10" >
-          05-10
-        </time>
-      </div>
+    <div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </article>
 
 
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
 
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
         
-            <a class="post-title-link" href="/2016/05/08/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
         
-      </h1>
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/08/hello-world/" itemprop="url">
+                  Hello World
+                </a>
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-08T14:07:17-04:00"
-              content="2016-05-08" >
-          05-08
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-08T14:07:17-04:00" content="2016-05-08">
+              2016-05-08
+            </time>
+          </span>
 
-    </header>
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Inital/" itemprop="url" rel="index">
+                    <span itemprop="name">Inital</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/08/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/08/hello-world/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/08/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+               <span class="post-meta-item-text">Views </span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://cdn1.snapgram.co/imgs/2016/05/10/TengfeiYang2.jpg" alt="hello"></p>
+<p>Welcome to <a href="https://tengfei.tech/">Tengfei’s Notes</a>! This is my very first post. Check <a href="https://tengfei.tech/about.html#/step-1">About</a> for more information about me. If you get any problem when reading my posts, you can leave me a message at the bottom of the posts.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </article>
 
 
-
     
-
   </section>
 
   
-
 
 
           </div>
@@ -544,12 +718,6 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
-
 
   
 
