@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tengfei.tech/2016/05/17/Hexo%E5%AF%B9%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%96%E6%B6%88%E7%BC%96%E8%AF%91/</loc>
+    
+    <lastmod>2016-05-17T22:09:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tengfei.tech/2016/05/08/hello-world/</loc>
+    
+    <lastmod>2016-05-17T21:56:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tengfei.tech/2016/05/10/Hexo%E5%92%8CGitHub%E6%90%AD%E5%BB%BABlog%E4%B8%AD%E7%94%A8%E5%88%B0%E7%9A%84%E6%9C%8D%E5%8A%A1/</loc>
+    
+    <lastmod>2016-05-17T21:55:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tengfei.tech/2016/05/17/%E6%9B%B4%E6%94%B9Hexo%E7%9A%84NexT%E4%B8%BB%E9%A2%98%E7%9A%84%E5%85%B3%E4%BA%8E%E9%A1%B5%E9%9D%A2%E5%9C%A8%E6%96%B0%E7%9A%84%E9%A1%B5%E9%9D%A2%E6%89%93%E5%BC%80/</loc>
     
-    <lastmod>2016-05-17T20:50:32.000Z</lastmod>
+    <lastmod>2016-05-17T21:55:02.000Z</lastmod>
     
   </url>
   
@@ -12,20 +33,6 @@
     <loc>http://tengfei.tech/index.html</loc>
     
     <lastmod>2016-05-17T02:30:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tengfei.tech/2016/05/10/Hexo%E5%92%8CGitHub%E6%90%AD%E5%BB%BABlog%E4%B8%AD%E7%94%A8%E5%88%B0%E7%9A%84%E6%9C%8D%E5%8A%A1/</loc>
-    
-    <lastmod>2016-05-12T19:12:15.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tengfei.tech/2016/05/08/hello-world/</loc>
-    
-    <lastmod>2016-05-10T22:43:03.000Z</lastmod>
     
   </url>
   
