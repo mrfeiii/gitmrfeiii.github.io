@@ -101,7 +101,7 @@ TimeCapturor">
 <meta property="og:image" content="http://cdn4.snapgram.co/images/2016/05/23/Screenshot-1242x2208.md.png">
 <meta property="og:image" content="http://cdn2.snapgram.co/imgs/2016/05/23/Screenshot-1242x220877e67.md.png">
 <meta property="og:image" content="http://cdn1.snapgram.co/imgs/2016/05/23/Screenshot-1242x2208e144b.md.png">
-<meta property="og:updated_time" content="2016-05-23T22:36:58.000Z">
+<meta property="og:updated_time" content="2016-05-23T22:41:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Time flies by,but we can capture it">
 <meta name="twitter:description" content="Time flies by, but we can capture it.
@@ -530,7 +530,7 @@ TimeCapturor">
 <a id="more"></a>
 <p>It’s my first App released in App Store. Basically, I got this idea from the observation of my friends. Like every Chiristmas Day, they alsways say ‘ Time goes so fast, I even dont know what happend in the last year!’ So I wander can I create an App that can capture people’s valuble moments or just daily life? </p>
 <p>Finally, I got this idea. We can generate a time-lapse video from photos. In this way, users can have a glance of what happened in the past period. Just like <a href="https://www.youtube.com/watch?v=5ky6vgQfU24" target="_blank" rel="external">this video</a>. </p>
-<p>This is my first time using Swift, so I start to learn this coding language by watching a  <a href="https://itunes.apple.com/us/course/developing-ios-8-apps-swift/id961180099" target="_blank" rel="external">Tuition Video</a> from Stanford University in iTunes U. Then designed the UI of  this App. The last step is implementation. There are so many tiny problme during coding, but the most challenge one is Memory Management problem.</p>
+<p>This is my first time using Swift, so I start to learn this coding language by watching a  <a href="https://itunes.apple.com/us/course/developing-ios-8-apps-swift/id961180099" target="_blank" rel="external">Tuition Video</a> from Stanford University in iTunes U. Then designed the UI of  this App. The last step is implementation. There are so many tiny problem during coding, but the most challenge one is Memory Management problem.</p>
 <p>When I was tring to generate a video from 10 photos, it worked good, but when I want to generat video from more than 50 photos, the memory increase sharply and used up very quickly then the thread was terminated by system.</p>
 <p>After googling, I figured out what caused the memory increasing. </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">We</span> need to use autorelease pool here.</span><br></pre></td></tr></table></figure>
@@ -539,8 +539,8 @@ TimeCapturor">
 <p>iPhone applications run in an event loop, as shown in the diagram below. That is, when your iPhone application launches, the program enters the event loop and waits for a user touch event. When a touch event happens, the Cocoa Touch framework detects the event, creates an event object, and allocates and initializes an autorelease pool. Cocoa Touch then invokes your application event handler, making the event object available.</p>
 <p><img src="http://cdn3.snapgram.co/imgs/2016/05/23/EventLoopDiagram.gif" alt="digram" title="iPhone Application Event Loop"></p>
 <p>When reading images to memory, I put the process in a loop, so we need to release the used memory before allocate new memory.</p>
-<p>After completed this project, I realsed it to App Store <em>for free</em>!</p>
-<p>You can dowload <a href="https://itunes.apple.com/us/app/timecapturor/id1073022692?mt=8" target="_blank" rel="external">HERE</a> or scan QR code below.</p>
+<p>After completed this project, I released it to App Store <em>for free</em>!</p>
+<p>You can download <a href="https://itunes.apple.com/us/app/timecapturor/id1073022692?mt=8" target="_blank" rel="external">HERE</a> or scan QR code below.</p>
 <p><img src="http://cdn4.snapgram.co/images/2016/05/18/1463607143.png" alt="qr" title="TimeCapturor QR code"></p>
 <p>It’s a beautiful Application, there are some tips for using.</p>
 <ul>
