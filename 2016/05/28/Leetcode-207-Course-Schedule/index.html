@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, tengfei, tengfei.tech, notes" />
+  <meta name="keywords" content="Leetcode,Topological Sort," />
 
 
 
@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="Embracing The Unknown.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://tengfei.tech/categories/index.html">
+<meta name="description" content="QuestionThere are a total of n courses you have to take, labeled from 0 to n - 1.
+Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode]207. Course Schedule">
+<meta property="og:url" content="http://tengfei.tech/2016/05/28/Leetcode-207-Course-Schedule/index.html">
 <meta property="og:site_name" content="Tengfei's Notes">
-<meta property="og:description" content="Embracing The Unknown.">
-<meta property="og:updated_time" content="2016-05-09T23:22:35.000Z">
+<meta property="og:description" content="QuestionThere are a total of n courses you have to take, labeled from 0 to n - 1.
+Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed">
+<meta property="og:updated_time" content="2016-05-28T23:01:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="Embracing The Unknown.">
+<meta name="twitter:title" content="[Leetcode]207. Course Schedule">
+<meta name="twitter:description" content="QuestionThere are a total of n courses you have to take, labeled from 0 to n - 1.
+Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed">
 
 
 
@@ -111,13 +114,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    Category | Tengfei's Notes
-  
-</title>
+  <title> [Leetcode]207. Course Schedule | Tengfei's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -147,7 +144,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -422,16 +419,192 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="category-all-page">
-        <div class="category-all-title">
-            7 categories in total
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [Leetcode]207. Course Schedule
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-28T14:28:50-04:00" content="2016-05-28">
+              2016-05-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/28/Leetcode-207-Course-Schedule/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/28/Leetcode-207-Course-Schedule/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/28/Leetcode-207-Course-Schedule/" class="leancloud_visitors" data-flag-title="[Leetcode]207. Course Schedule">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+               <span class="post-meta-item-text">Views </span>
+              </span>
+          
+
+          
         </div>
-        <div class="category-all">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Inital/">Inital</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读过的书/">读过的书</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随便写点/">随便写点</a><span class="category-list-count">1</span></li></ul>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>There are a total of <em>n</em> courses you have to take, labeled from <code>0</code> to <code>n - 1</code>.</p>
+<p>Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed as a pair: <code>[0,1]</code></p>
+<p>Given the total number of courses and a list of prerequisite <strong>pairs</strong>, is it possible for you to finish all courses?</p>
+<p>For example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2, [[1,0]]</span><br></pre></td></tr></table></figure>
+<p>There are a total of 2 courses to take. To take course 1 you should have finished course 0. So it is possible.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2, [[1,0],[0,1]]</span><br></pre></td></tr></table></figure>
+<p>There are a total of 2 courses to take. To take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So it is impossible.</p>
+<a id="more"></a>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>It’s a typical topological sorting problem.  </p>
+<p>Use a NxN <strong><em>matrix</em></strong> (N is the number of course) to represent the courses graph relationship. Use an  <strong><em>array list</em></strong> to store the in-degree of every course. Use a <strong><em>queue</em></strong> to store the nodes which in-degree is 0.</p>
+<p>Firstly, go through the input array to construct the graph matrix and record the in-degree of every node at the same time. Then go through the in-degree list, put the nodes which in-degree is 0 into the queue. </p>
+<h5 id="Kahn’s-algorithm"><a href="#Kahn’s-algorithm" class="headerlink" title="Kahn’s algorithm"></a>Kahn’s algorithm</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">L ← Empty list that will contain the sorted elements</span><br><span class="line">S ← Set of all nodes with no incoming edges</span><br><span class="line">while S is non-empty do</span><br><span class="line">    remove a node n from S</span><br><span class="line">    add n to tail of L</span><br><span class="line">    for each node m with an edge e from n to m do</span><br><span class="line">        remove edge e from the graph</span><br><span class="line">        if m has no other incoming edges then</span><br><span class="line">            insert m into S</span><br><span class="line">if graph has edges then</span><br><span class="line">    return error (graph has at least one cycle)</span><br><span class="line">else </span><br><span class="line">    return L (a topologically sorted order)</span><br></pre></td></tr></table></figure>
+<h5 id="Implementa"><a href="#Implementa" class="headerlink" title="Implementa"></a>Implementa</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canFinish</span><span class="params">(<span class="keyword">int</span> numCourses, <span class="keyword">int</span>[][] prerequisites)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[][] matrix = <span class="keyword">new</span> <span class="keyword">int</span>[numCourses][numCourses];<span class="comment">// int[i][j]==1 means i-&gt;j can't be i&lt;-j</span></span><br><span class="line">        <span class="keyword">int</span>[] indegree = <span class="keyword">new</span> <span class="keyword">int</span>[numCourses];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prerequisites.length; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> current = prerequisites[i][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> pre = prerequisites[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>( matrix[pre][current] == <span class="number">0</span> )&#123;</span><br><span class="line">                indegree[current]++;</span><br><span class="line">            &#125;</span><br><span class="line">             matrix[pre][current] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        Queue&lt;Integer&gt; queue = <span class="keyword">new</span> LinkedList(); <span class="comment">//store 0 indegree nodes</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; numCourses; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>( indegree[i] == <span class="number">0</span> )&#123;</span><br><span class="line">                queue.offer(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>( !queue.isEmpty() )&#123;</span><br><span class="line">            <span class="keyword">int</span> current = queue.poll();</span><br><span class="line">            count++;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numCourses; i++ )&#123;</span><br><span class="line">                <span class="keyword">if</span>( matrix[current][i] != <span class="number">0</span> )&#123;</span><br><span class="line">                    <span class="keyword">if</span> (--indegree[i] == <span class="number">0</span>)&#123;</span><br><span class="line">                        queue.offer(i);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> numCourses == count;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Points"><a href="#Points" class="headerlink" title="Points"></a>Points</h5><ul>
+<li><strong><em>Horizontal</em></strong> vs <strong><em>Vertical</em></strong> visiting 2D array.</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>写得好！朕重重有赏！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatPay.JPG" alt="Tengfei Yang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/zhifubaoPay.JPG" alt="Tengfei Yang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+          
+            <a href="/tags/Topological-Sort/" rel="tag">#Topological Sort</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/27/动物庄园/" rel="next" title="动物庄园">
+                <i class="fa fa-chevron-left"></i> 动物庄园
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -440,6 +613,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/28/Leetcode-207-Course-Schedule/"
+           data-title="[Leetcode]207. Course Schedule" data-url="http://tengfei.tech/2016/05/28/Leetcode-207-Course-Schedule/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -459,8 +640,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -548,6 +738,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Kahn’s-algorithm"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">Kahn’s algorithm</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Implementa"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">Implementa</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Points"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">Points</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -668,6 +869,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
