@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tengfei.tech/2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/</loc>
+    
+    <lastmod>2016-05-31T19:18:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tengfei.tech/2016/05/28/Leetcode-207-Course-Schedule/</loc>
     
     <lastmod>2016-05-28T23:01:37.000Z</lastmod>
