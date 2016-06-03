@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tengfei.tech/2016/06/01/Leetcode-310-Minimum-Height-Trees/</loc>
+    
+    <lastmod>2016-06-03T04:44:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tengfei.tech/2016/05/28/Leetcode-207-Course-Schedule/</loc>
     
     <lastmod>2016-05-31T22:17:00.000Z</lastmod>
