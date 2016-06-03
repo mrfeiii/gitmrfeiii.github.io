@@ -4,8 +4,32 @@
 
     
   <url>
+    <loc>http://tengfei.tech/2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/</loc>
+    <lastmod>2016-06-03T16:19:15.000Z</lastmod>
+    <data>
+        <display>
+        <title>[Leetcode]82. Remove Duplicates from Sorted List II</title>
+        <pubTime>2016-05-31T19:09:51.000Z</pubTime>
+        
+        <tag>Leetcode</tag>
+         
+        <tag>LinkedList</tag>
+         
+        <tag>Algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="Algorithm" url="http://tengfei.tech/categories/Algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tengfei.tech/2016/06/01/Leetcode-310-Minimum-Height-Trees/</loc>
-    <lastmod>2016-06-03T04:44:09.000Z</lastmod>
+    <lastmod>2016-06-03T16:19:06.000Z</lastmod>
     <data>
         <display>
         <title>[Leetcode]310. Minimum Height Trees</title>
@@ -13,9 +37,9 @@
         
         <tag>Leetcode</tag>
          
-        <tag>Topological Sort</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>Topological Sort</tag>
          
          
            
@@ -37,33 +61,9 @@
         
         <tag>Leetcode</tag>
          
+        <tag>Algorithm</tag>
+         
         <tag>Topological Sort</tag>
-         
-        <tag>Algorithm</tag>
-         
-         
-           
-             
-              <breadCrumb title="Algorithm" url="http://tengfei.tech/categories/Algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tengfei.tech/2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/</loc>
-    <lastmod>2016-05-31T22:16:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>[Leetcode]82. Remove Duplicates from Sorted List II</title>
-        <pubTime>2016-05-31T19:09:51.000Z</pubTime>
-        
-        <tag>Leetcode</tag>
-         
-        <tag>Algorithm</tag>
-         
-        <tag>LinkedList</tag>
          
          
            
