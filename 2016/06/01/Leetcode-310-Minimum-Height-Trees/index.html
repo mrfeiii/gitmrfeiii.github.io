@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Leetcode,Algorithm,Topological Sort," />
+  <meta name="keywords" content="Leetcode,Topological Sort,Algorithm," />
 
 
 
@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://tengfei.tech/2016/06/01/Leetcode-310-Minimum-Height-Trees/index.html">
 <meta property="og:site_name" content="Tengfei's Notes">
 <meta property="og:description" content="QuestionFor a undirected graph with tree characteristics, we can choose any node as the root. The result graph is then a rooted tree. Among all possible rooted trees, those with minimum height are cal">
-<meta property="og:updated_time" content="2016-06-03T16:19:06.000Z">
+<meta property="og:updated_time" content="2016-06-03T16:21:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode]310. Minimum Height Trees">
 <meta name="twitter:description" content="QuestionFor a undirected graph with tree characteristics, we can choose any node as the root. The result graph is then a rooted tree. Among all possible rooted trees, those with minimum height are cal">
@@ -511,8 +511,6 @@
 
       
         <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>For a undirected graph with tree characteristics, we can choose any node as the root. The result graph is then a rooted tree. Among all possible rooted trees, those with minimum height are called minimum height trees (MHTs). Given such a graph, write a function to find all the MHTs and return a list of their root labels.</p>
-<a id="more"></a>
-<p><strong>Format</strong></p>
 <p><strong>Format</strong><br>The graph contains <code>n</code> nodes which are labeled from <code>0</code> to <code>n - 1</code>. You will be given the number <code>n</code> and a list of undirected <code>edges</code> (each edge is a pair of labels).</p>
 <p>You can assume that no duplicate edges will appear in <code>edges</code>. Since all edges are undirected, <code>[0, 1]</code> is the same as <code>[1, 0]</code> and thus will not appear together in <code>edges</code>.</p>
 <p><strong>Example 1:</strong></p>
@@ -524,6 +522,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">0  1  2</span><br><span class="line"> \ | /</span><br><span class="line">   3</span><br><span class="line">   |</span><br><span class="line">   4</span><br><span class="line">   |</span><br><span class="line">   5</span><br></pre></td></tr></table></figure>
 <p>return <code>[3, 4]</code></p>
 <h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>First of all, we can think a simple situation. What’s the MHT for a one path tree? The answer is pretty straight forward,  the middle 1 or 2 points, depends on even or odd nodes the tree has, is the  MHTs.</p>
+<a id="more"></a>
 <p>Now we can expand to the general situation. There are 2 ways to solves this problem.</p>
 <ol>
 <li><p>Randomly select a node x as the root, do a dfs/bfs to find the node y that has the longest distance from x. Then y must be one of the endpoints on some longest path. Let y the new root, and do another dfs/bfs. Find the node z that has the longest distance from y.</p>
@@ -577,9 +576,9 @@
           
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
-            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
-          
             <a href="/tags/Topological-Sort/" rel="tag">#Topological Sort</a>
+          
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
           
         </div>
       
