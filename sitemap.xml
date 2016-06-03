@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tengfei.tech/2016/05/17/%E5%AD%A9%E5%AD%90%E7%9A%84%E7%9C%BC%E7%9D%9B/</loc>
+    
+    <lastmod>2016-06-03T16:56:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tengfei.tech/2016/06/01/Leetcode-310-Minimum-Height-Trees/</loc>
     
     <lastmod>2016-06-03T16:21:04.000Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://tengfei.tech/2016/05/18/Time-flies-by-but-we-can-capture-it/</loc>
     
     <lastmod>2016-05-23T22:41:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tengfei.tech/2016/05/17/%E5%AD%A9%E5%AD%90%E7%9A%84%E7%9C%BC%E7%9D%9B/</loc>
-    
-    <lastmod>2016-05-18T01:32:10.000Z</lastmod>
     
   </url>
   
