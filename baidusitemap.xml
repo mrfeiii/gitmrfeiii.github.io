@@ -4,6 +4,56 @@
 
     
   <url>
+    <loc>http://tengfei.tech/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/</loc>
+    <lastmod>2016-06-03T21:15:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>[Leetcode]187. Repeated DNA Sequences</title>
+        <pubTime>2016-06-03T21:02:26.000Z</pubTime>
+        
+        <tag>Leetcode</tag>
+         
+        <tag>Bit Manipulate</tag>
+         
+        <tag>Hash Table</tag>
+         
+        <tag>Algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="Algorithm" url="http://tengfei.tech/categories/Algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tengfei.tech/2016/06/03/Leetcode-31-Next-Permutation/</loc>
+    <lastmod>2016-06-03T18:28:57.000Z</lastmod>
+    <data>
+        <display>
+        <title>[Leetcode]31. Next Permutation</title>
+        <pubTime>2016-06-03T17:46:15.000Z</pubTime>
+        
+        <tag>Leetcode</tag>
+         
+        <tag>Algorithm</tag>
+         
+        <tag>Array</tag>
+         
+         
+           
+             
+              <breadCrumb title="Algorithm" url="http://tengfei.tech/categories/Algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tengfei.tech/2016/05/17/%E5%AD%A9%E5%AD%90%E7%9A%84%E7%9C%BC%E7%9D%9B/</loc>
     <lastmod>2016-06-03T17:00:29.000Z</lastmod>
     <data>
@@ -37,9 +87,9 @@
         
         <tag>Leetcode</tag>
          
-        <tag>Topological Sort</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>Topological Sort</tag>
          
          
            
@@ -85,9 +135,9 @@
         
         <tag>Leetcode</tag>
          
-        <tag>Topological Sort</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>Topological Sort</tag>
          
          
            

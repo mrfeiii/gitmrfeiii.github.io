@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, tengfei, tengfei.tech, notes" />
+  <meta name="keywords" content="Leetcode,Bit Manipulate,Hash Table,Algorithm," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="Embracing The Unknown.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tengfei's Notes">
-<meta property="og:url" content="http://tengfei.tech/page/2/index.html">
+<meta name="description" content="QuestionAll DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, for example: “ACGAATTCCG”. When studying DNA, it is sometimes useful to identify repeated sequences within the DNA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode]187. Repeated DNA Sequences">
+<meta property="og:url" content="http://tengfei.tech/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/index.html">
 <meta property="og:site_name" content="Tengfei's Notes">
-<meta property="og:description" content="Embracing The Unknown.">
+<meta property="og:description" content="QuestionAll DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, for example: “ACGAATTCCG”. When studying DNA, it is sometimes useful to identify repeated sequences within the DNA">
+<meta property="og:updated_time" content="2016-06-03T21:15:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tengfei's Notes">
-<meta name="twitter:description" content="Embracing The Unknown.">
+<meta name="twitter:title" content="[Leetcode]187. Repeated DNA Sequences">
+<meta name="twitter:description" content="QuestionAll DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, for example: “ACGAATTCCG”. When studying DNA, it is sometimes useful to identify repeated sequences within the DNA">
 
 
 
@@ -110,7 +111,7 @@
   };
 </script>
 
-  <title> Tengfei's Notes - Embracing The Unknown. </title>
+  <title> [Leetcode]187. Repeated DNA Sequences | Tengfei's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -140,9 +141,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -414,9 +413,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -436,10 +435,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/05/27/动物庄园/" itemprop="url">
-                  动物庄园
-                </a>
+                [Leetcode]187. Repeated DNA Sequences
               
             
           </h1>
@@ -451,8 +447,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-27T11:48:15-04:00" content="2016-05-27">
-              2016-05-27
+            <time itemprop="dateCreated" datetime="2016-06-03T17:02:26-04:00" content="2016-06-03">
+              2016-06-03
             </time>
           </span>
 
@@ -465,8 +461,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/读过的书/" itemprop="url" rel="index">
-                    <span itemprop="name">读过的书</span>
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
                   </a>
                 </span>
 
@@ -481,8 +477,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/27/动物庄园/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/动物庄园/" itemprop="commentsCount"></span>
+                <a href="/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/03/Leetcode-187-Repeated-DNA-Sequences/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -492,7 +488,7 @@
 
           
           
-             <span id="/2016/05/27/动物庄园/" class="leancloud_visitors" data-flag-title="动物庄园">
+             <span id="/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/" class="leancloud_visitors" data-flag-title="[Leetcode]187. Repeated DNA Sequences">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -514,576 +510,99 @@
       
 
       
+        <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, for example: “ACGAATTCCG”. When studying DNA, it is sometimes useful to identify repeated sequences within the DNA.</p>
+<p>Write a function to find all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule.</p>
+<p>For example,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Given s = &quot;AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT&quot;,</span><br><span class="line"></span><br><span class="line">Return:</span><br><span class="line">[&quot;AAAAACCCCC&quot;, &quot;CCCCCAAAAA&quot;].</span><br></pre></td></tr></table></figure>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>We can solve this problem in 2 ways.</p>
+<ol>
+<li><p>Use sliding window to get every 10-letter-long subString of the input string. Store them in a hash set. Every time insert new substring to hash set, check if it’s exist in hash set. If exist, put it in a result hash set. We choose hash set to store the result, because the result need to be unique.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">findRepeatedDnaSequences</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        HashSet&lt;String&gt; subStrings = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">        HashSet&lt;String&gt; repeatedSubstrings = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= s.length()-<span class="number">10</span>; i++)&#123;</span><br><span class="line">            String subS = s.substring(i,i+<span class="number">10</span>);</span><br><span class="line">            <span class="keyword">if</span>( !subStrings.add(subS) )&#123;</span><br><span class="line">                repeatedSubstrings.add(subS);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ArrayList(repeatedSubstrings);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>The solution before is pretty straight forward but need a lot memory to store the sub-strings. We can optimize the algorithm by using bit manipulate. There are only 4 letters, we can use 2 bit to present a letter.  00, 01, 10, 11  stand for A, C, T, G. An integer is 32 bits. so we can use an integer rather than a string to present a substring.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">findRepeatedDnaSequences</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       List&lt;String&gt; result = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">if</span>(s == <span class="keyword">null</span> || s.length() &lt; <span class="number">10</span> )&#123;</span><br><span class="line">           <span class="keyword">return</span> result;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       HashMap&lt;Character,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();</span><br><span class="line">       map.put(<span class="string">'A'</span>,<span class="number">0</span>); <span class="comment">// 00</span></span><br><span class="line">       map.put(<span class="string">'C'</span>,<span class="number">1</span>); <span class="comment">// 01</span></span><br><span class="line">       map.put(<span class="string">'T'</span>,<span class="number">2</span>); <span class="comment">// 10</span></span><br><span class="line">       map.put(<span class="string">'G'</span>,<span class="number">3</span>); <span class="comment">// 11</span></span><br><span class="line">     </span><br><span class="line">       Set&lt;Integer&gt; subStrings = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">       Set&lt;Integer&gt; repeated = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">       <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; s.length(); i++ )&#123;</span><br><span class="line">           temp = (temp &lt;&lt; <span class="number">2</span>) + map.get( s.charAt(i) );</span><br><span class="line">           <span class="keyword">if</span>( i &gt;= <span class="number">9</span> )&#123;</span><br><span class="line">               temp = temp &amp; ( (<span class="number">1</span> &lt;&lt; <span class="number">20</span>) - <span class="number">1</span> );   <span class="comment">// temp &amp; 111111 , filt the last 20 digits. </span></span><br><span class="line">               <span class="keyword">if</span>( subStrings.contains(temp) &amp;&amp; !repeated.contains(temp) )&#123;</span><br><span class="line">                   result.add( s.substring(i-<span class="number">9</span>,i+<span class="number">1</span>) );</span><br><span class="line">                   repeated.add(temp);</span><br><span class="line">               &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                   subStrings.add(temp);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
         
-          <p><img src="http://cdn1.snapgram.co/imgs/2016/05/27/animalFarm.md.jpg" alt="animal" title="Animal Farm"></p>
-<p>在我看来，整本书都在讲一个寓意深刻的寓言。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/27/动物庄园/#more" rel="contents">
-              Read more &raquo;
-            </a>
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>写得好！朕重重有赏！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatPay.JPG" alt="Tengfei Yang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/zhifubaoPay.JPG" alt="Tengfei Yang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+          
+            <a href="/tags/Bit-Manipulate/" rel="tag">#Bit Manipulate</a>
+          
+            <a href="/tags/Hash-Table/" rel="tag">#Hash Table</a>
+          
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/03/Leetcode-31-Next-Permutation/" rel="next" title="[Leetcode]31. Next Permutation">
+                <i class="fa fa-chevron-left"></i> [Leetcode]31. Next Permutation
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/26/music/" itemprop="url">
-                  xiami music template
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-26T17:34:12-04:00" content="2016-05-26">
-              2016-05-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/26/music/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/26/music/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/26/music/" class="leancloud_visitors" data-flag-title="xiami music template">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="leancloud-visitors-count"></span>
-               <span class="post-meta-item-text">Views </span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <iframe src="http://musicbox.coding.io/xiamiplayer/1772152245" frameborder="0" scrolling="0" width="430" height="200" align="middle" allowtransparency=""></iframe>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://musicbox.coding.io/xiamiplayer/1772152245"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span> <span class="attr">scrolling</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">"430"</span> <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">align</span>=<span class="string">"middle"</span> <span class="attr">allowtransparency</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/18/Time-flies-by-but-we-can-capture-it/" itemprop="url">
-                  Time flies by,but we can capture it
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-18T17:40:53-04:00" content="2016-05-18">
-              2016-05-18
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/18/Time-flies-by-but-we-can-capture-it/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/18/Time-flies-by-but-we-can-capture-it/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/18/Time-flies-by-but-we-can-capture-it/" class="leancloud_visitors" data-flag-title="Time flies by,but we can capture it">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="leancloud-visitors-count"></span>
-               <span class="post-meta-item-text">Views </span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote class="blockquote-center"><p> Time flies by, but we can capture it.</p>
-<p>TimeCapturor</p>
-</blockquote>
-<p><img src="http://cdn3.snapgram.co/imgs/2016/05/23/phone.png" alt="timecapturor"></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/18/Time-flies-by-but-we-can-capture-it/#more" rel="contents">
-              Read more &raquo;
-            </a>
           </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/17/孩子的眼睛/" itemprop="url">
-                  孩子的眼睛
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-17T19:40:20-04:00" content="2016-05-17">
-              2016-05-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随便写点/" itemprop="url" rel="index">
-                    <span itemprop="name">随便写点</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/17/孩子的眼睛/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/17/孩子的眼睛/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/17/孩子的眼睛/" class="leancloud_visitors" data-flag-title="孩子的眼睛">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="leancloud-visitors-count"></span>
-               <span class="post-meta-item-text">Views </span>
-              </span>
-          
-
-          
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p><img src="http://cdn3.snapgram.co/imgs/2016/05/17/DSC_4551-2.jpg" alt="image1" title="纽约出租车里的孩子"></p>
-<p>每次出去玩，我都喜欢拍街上的孩子。</p>
-<p>回来看照片的时候，总感觉他们的脸上或者眼睛里充满了让人无限想象的故事。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/17/孩子的眼睛/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/17/Hexo对指定文件或文件夹取消编译/" itemprop="url">
-                  Hexo对指定文件或文件夹取消编译
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-17T17:49:28-04:00" content="2016-05-17">
-              2016-05-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/17/Hexo对指定文件或文件夹取消编译/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/17/Hexo对指定文件或文件夹取消编译/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/17/Hexo对指定文件或文件夹取消编译/" class="leancloud_visitors" data-flag-title="Hexo对指定文件或文件夹取消编译">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="leancloud-visitors-count"></span>
-               <span class="post-meta-item-text">Views </span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>用Hexo自动生成静态Html页面时，source文件下的 .md文件都会被转码成html并且自动套用上模板。但是有些时候我们不想让Hexo自动编译，比如我目录下放的就是自己已经写好的html文件，不需要再次被转码，再次编译反而会生成错误的文件。这时候就要指定某些文件或者文件夹取消编译。</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>如果是用的是Next主题，可以编辑 <strong><em>站点配置文件</em></strong> 的skip_render字段，添加需要跳过编译的文件或文件夹。但是注意，这里的路径问题。默认起始路径已经在source文件夹下了。比如，要跳过about文件夹下的所有文件可以把value赋值为 <em>about/**，而不是 source/about/</em>。 </p>
-<p>如果要对某一类文件跳过编译，可以写生 about/*.html。代表对about文件夹下的所有html文件跳过编译。</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+  </div>
 
 
           </div>
@@ -1091,6 +610,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/03/Leetcode-187-Repeated-DNA-Sequences/"
+           data-title="[Leetcode]187. Repeated DNA Sequences" data-url="http://tengfei.tech/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -1110,8 +637,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -1199,6 +735,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -1319,6 +866,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
