@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, tengfei, tengfei.tech, notes" />
+  <meta name="keywords" content="Leetcode,Algorithm,Boyer–Moore majority vote," />
 
 
 
@@ -84,15 +84,19 @@
 
 
 
-<meta name="description" content="Embracing The Unknown.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tengfei's Notes">
-<meta property="og:url" content="http://tengfei.tech/tags/Hash-Table/index.html">
+<meta name="description" content="QuestionGiven an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times. The algorithm should run in linear time and in O(1) space.
+SolutionFor finding the majority elements, t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode]229. Majority Element II">
+<meta property="og:url" content="http://tengfei.tech/2016/06/04/Leetcode-229-Majority-Element-II/index.html">
 <meta property="og:site_name" content="Tengfei's Notes">
-<meta property="og:description" content="Embracing The Unknown.">
+<meta property="og:description" content="QuestionGiven an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times. The algorithm should run in linear time and in O(1) space.
+SolutionFor finding the majority elements, t">
+<meta property="og:updated_time" content="2016-06-04T17:58:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tengfei's Notes">
-<meta name="twitter:description" content="Embracing The Unknown.">
+<meta name="twitter:title" content="[Leetcode]229. Majority Element II">
+<meta name="twitter:description" content="QuestionGiven an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times. The algorithm should run in linear time and in O(1) space.
+SolutionFor finding the majority elements, t">
 
 
 
@@ -110,7 +114,7 @@
   };
 </script>
 
-  <title> Tag: Hash Table | Tengfei's Notes </title>
+  <title> [Leetcode]229. Majority Element II | Tengfei's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -140,7 +144,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -413,46 +417,195 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Hash Table
-        <small>Tag</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [Leetcode]229. Majority Element II
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-04T13:39:27-04:00" content="2016-06-04">
+              2016-06-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/04/Leetcode-229-Majority-Element-II/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/04/Leetcode-229-Majority-Element-II/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/04/Leetcode-229-Majority-Element-II/" class="leancloud_visitors" data-flag-title="[Leetcode]229. Majority Element II">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+               <span class="post-meta-item-text">Views </span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Given an integer array of size <em>n</em>, find all elements that appear more than <code>⌊ n/3 ⌋</code> times. The algorithm should run in linear time and in O(1) space.</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>For finding the majority elements, there is a very famous algorithm <a href="https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm" target="_blank" rel="external"><strong><em>Boyer–Moore majority vote algorithm</em></strong></a>. But the original algorithm is for finding  the majority number that appears more than ⌊ n/2 ⌋ times. So we need to modify the algorithm to find numbers that appears more than n/3.  Use 2 counter to keep tracking of 2 candidate numbers.</p>
+<p> For every number in array, </p>
+<ol>
+<li>Check if it is one of the two candidate numbers. </li>
+<li>Check if its’ counter is 0, if counter is 0, update candidate number and set counter to 1.</li>
+<li>If it is not satisfy either of the above conditions. Decrement the counter by 1.</li>
+</ol>
+<p>After the first round loop, we have two “majority” numbers but we don’t know if they appears more than n/3 time. So we start another loop to count the occurrence time. </p>
+<p>Finally, if the occurrence time is more than n/3, add it to result set.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">majorityElement</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; ret  = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">if</span>( nums.length == <span class="number">0</span> )&#123;</span><br><span class="line">            <span class="keyword">return</span> ret;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> count1 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> m1 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> m2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> n : nums )&#123;</span><br><span class="line">            <span class="keyword">if</span>( n == m1 )&#123;</span><br><span class="line">                count1++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( n == m2 )&#123;</span><br><span class="line">                count2++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> ( count1 == <span class="number">0</span> )&#123;</span><br><span class="line">                m1 = n;</span><br><span class="line">                count1 = <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> ( count2 == <span class="number">0</span> )&#123;</span><br><span class="line">                m2 = n;</span><br><span class="line">                count2 = <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                count1--;</span><br><span class="line">                count2--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        count1 = <span class="number">0</span>;</span><br><span class="line">        count2 = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> n : nums )&#123;</span><br><span class="line">            <span class="keyword">if</span>( n == m1 )&#123;</span><br><span class="line">                count1++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( n == m2 )&#123;</span><br><span class="line">                count2++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>( count1 &gt; nums.length/<span class="number">3</span> ) ret.add(m1);</span><br><span class="line">        <span class="keyword">if</span>( count2 &gt; nums.length/<span class="number">3</span> ) ret.add(m2);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/" itemprop="url">
-              
-                <span itemprop="name">[Leetcode]187. Repeated DNA Sequences</span>
-              
-            </a>
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>写得好！朕重重有赏！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatPay.JPG" alt="Tengfei Yang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/zhifubaoPay.JPG" alt="Tengfei Yang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-03T17:02:26-04:00"
-              content="2016-06-03" >
-          06-03
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+          
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
+          
+            <a href="/tags/Boyer–Moore-majority-vote/" rel="tag">#Boyer–Moore majority vote</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/" rel="next" title="[Leetcode]187. Repeated DNA Sequences">
+                <i class="fa fa-chevron-left"></i> [Leetcode]187. Repeated DNA Sequences
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/04/Leetcode-306-Additive-Number/" rel="prev" title="[Leetcode]306. Additive Number">
+                [Leetcode]306. Additive Number <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -460,6 +613,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/04/Leetcode-229-Majority-Element-II/"
+           data-title="[Leetcode]229. Majority Element II" data-url="http://tengfei.tech/2016/06/04/Leetcode-229-Majority-Element-II/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -479,8 +640,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -568,6 +738,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -688,6 +869,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

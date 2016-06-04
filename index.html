@@ -437,6 +437,300 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/04/Leetcode-306-Additive-Number/" itemprop="url">
+                  [Leetcode]306. Additive Number
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-04T17:10:58-04:00" content="2016-06-04">
+              2016-06-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/04/Leetcode-306-Additive-Number/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/04/Leetcode-306-Additive-Number/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/04/Leetcode-306-Additive-Number/" class="leancloud_visitors" data-flag-title="[Leetcode]306. Additive Number">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+               <span class="post-meta-item-text">Views </span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Additive number is a string whose digits can form additive sequence.</p>
+<p>A valid additive sequence should contain <strong>at least</strong> three numbers. Except for the first two numbers, each subsequent number in the sequence must be the sum of the preceding two.</p>
+<p>For example:</p>
+<p>For example:<br><code>&quot;112358&quot;</code> is an additive number because the digits can form an additive sequence: <code>1, 1, 2, 3, 5, 8</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 + 1 = 2, 1 + 2 = 3, 2 + 3 = 5, 3 + 5 = 8</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;199100199&quot;</span><br></pre></td></tr></table></figure>
+<p> is also an additive number, the additive sequence is: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1, 99, 100, 199</span><br></pre></td></tr></table></figure>
+<p>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 + 99 = 100, 99 + 100 = 199</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong> Numbers in the additive sequence <strong>cannot</strong> have leading zeros, so sequence <code>1, 2, 03</code> or <code>1, 02, 3</code> is invalid.</p>
+<p>Given a string containing only digits <code>&#39;0&#39;-&#39;9&#39;</code>, write a function to determine if it’s an additive number.</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>The idea is quiet basic. </p>
+<ol>
+<li><p>Choose the first number A, it can be the leftmost <strong>1</strong> up to <strong>i</strong> digits. <strong>i&lt;=(L-1)/2</strong>, because the third number should be at least as long as the first number.</p>
+</li>
+<li><p>Choose the second number B, it can be the leftmost <strong>1</strong> up to <strong>j</strong> digits <strong>excluding the first number</strong>. The limit for <strong>j</strong> is in 2 conditions: </p>
+<ul>
+<li><p>if the length of second number( <strong>j - i</strong> ) is longer than the first number( <strong>i</strong> ), then the third number’s length( <strong>L - j</strong> ) should <strong>&gt;= ( j - i )</strong>. </p>
+</li>
+<li><p>if the length of second number( <strong>j - i</strong> ) is shorter than or equals to  the first number( <strong>i</strong> ), then the third number’s length( <strong>L - j</strong> ) should <strong>&gt;= i</strong> . </p>
+</li>
+</ul>
+</li>
+<li>Recursively check if there is one solution.</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAdditiveNumber</span><span class="params">(String num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> L = num.length();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= (L-<span class="number">1</span>)/<span class="number">2</span> ; i++ )&#123;  <span class="comment">// Length of A is from 1 to (L-1)/2. </span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>( num.charAt(<span class="number">0</span>) == <span class="string">'0'</span> &amp;&amp; i&gt;=<span class="number">2</span> ) <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// Length of B is from 1 to L-(A+B),and L-(A+B) &gt;= max(A,B)</span></span><br><span class="line">            <span class="keyword">for</span>( <span class="keyword">int</span> j = i+<span class="number">1</span>; (L-j) &gt;= i &amp;&amp; (L-j) &gt;= j-i ; j++ )&#123; </span><br><span class="line">         </span><br><span class="line">              <span class="keyword">if</span>( num.charAt(i) == <span class="string">'0'</span> &amp;&amp; j-i&gt;=<span class="number">2</span> ) <span class="keyword">break</span>;      </span><br><span class="line">              </span><br><span class="line">              <span class="keyword">long</span> A = Long.parseLong( num.substring(<span class="number">0</span>,i) );</span><br><span class="line">              <span class="keyword">long</span> B = Long.parseLong( num.substring(i,j) );</span><br><span class="line">              String substr = num.substring(j);</span><br><span class="line">              </span><br><span class="line">              <span class="keyword">if</span>( isAdditive( substr , A, B) == <span class="keyword">true</span> ) <span class="keyword">return</span> <span class="keyword">true</span>; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isAdditive</span><span class="params">(String str, <span class="keyword">long</span> A,<span class="keyword">long</span> B)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( str.equals(<span class="string">""</span>) ) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">long</span> sum = A + B;</span><br><span class="line">        String sumStr = String.valueOf(sum);</span><br><span class="line">        <span class="keyword">if</span>( !str.startsWith(sumStr) ) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> isAdditive( str.substring(sumStr.length()), B, sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/04/Leetcode-229-Majority-Element-II/" itemprop="url">
+                  [Leetcode]229. Majority Element II
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-04T13:39:27-04:00" content="2016-06-04">
+              2016-06-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/04/Leetcode-229-Majority-Element-II/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/04/Leetcode-229-Majority-Element-II/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/04/Leetcode-229-Majority-Element-II/" class="leancloud_visitors" data-flag-title="[Leetcode]229. Majority Element II">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+               <span class="post-meta-item-text">Views </span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Given an integer array of size <em>n</em>, find all elements that appear more than <code>⌊ n/3 ⌋</code> times. The algorithm should run in linear time and in O(1) space.</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>For finding the majority elements, there is a very famous algorithm <a href="https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm" target="_blank" rel="external"><strong><em>Boyer–Moore majority vote algorithm</em></strong></a>. But the original algorithm is for finding  the majority number that appears more than ⌊ n/2 ⌋ times. So we need to modify the algorithm to find numbers that appears more than n/3.  Use 2 counter to keep tracking of 2 candidate numbers.</p>
+<p> For every number in array, </p>
+<ol>
+<li>Check if it is one of the two candidate numbers. </li>
+<li>Check if its’ counter is 0, if counter is 0, update candidate number and set counter to 1.</li>
+<li>If it is not satisfy either of the above conditions. Decrement the counter by 1.</li>
+</ol>
+<p>After the first round loop, we have two “majority” numbers but we don’t know if they appears more than n/3 time. So we start another loop to count the occurrence time. </p>
+<p>Finally, if the occurrence time is more than n/3, add it to result set.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">majorityElement</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; ret  = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">if</span>( nums.length == <span class="number">0</span> )&#123;</span><br><span class="line">            <span class="keyword">return</span> ret;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> count1 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> m1 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> m2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> n : nums )&#123;</span><br><span class="line">            <span class="keyword">if</span>( n == m1 )&#123;</span><br><span class="line">                count1++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( n == m2 )&#123;</span><br><span class="line">                count2++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> ( count1 == <span class="number">0</span> )&#123;</span><br><span class="line">                m1 = n;</span><br><span class="line">                count1 = <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> ( count2 == <span class="number">0</span> )&#123;</span><br><span class="line">                m2 = n;</span><br><span class="line">                count2 = <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                count1--;</span><br><span class="line">                count2--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        count1 = <span class="number">0</span>;</span><br><span class="line">        count2 = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> n : nums )&#123;</span><br><span class="line">            <span class="keyword">if</span>( n == m1 )&#123;</span><br><span class="line">                count1++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>( n == m2 )&#123;</span><br><span class="line">                count2++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>( count1 &gt; nums.length/<span class="number">3</span> ) ret.add(m1);</span><br><span class="line">        <span class="keyword">if</span>( count2 &gt; nums.length/<span class="number">3</span> ) ret.add(m2);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/" itemprop="url">
                   [Leetcode]187. Repeated DNA Sequences
                 </a>
@@ -848,279 +1142,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/" itemprop="url">
-                  [Leetcode]82. Remove Duplicates from Sorted List II
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-31T15:09:51-04:00" content="2016-05-31">
-              2016-05-31
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/" class="leancloud_visitors" data-flag-title="[Leetcode]82. Remove Duplicates from Sorted List II">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="leancloud-visitors-count"></span>
-               <span class="post-meta-item-text">Views </span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only <em>distinct</em> numbers from the original list.</p>
-<p>For example,</p>
-<p>For example,<br>Given <code>1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5</code>, return <code>1-&gt;2-&gt;5</code>.</p>
-<p>For example,<br>Given <code>1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5</code>, return <code>1-&gt;2-&gt;5</code>.<br>Given <code>1-&gt;1-&gt;1-&gt;2-&gt;3</code>, return <code>2-&gt;3</code>.</p>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>Because the head of linked list could be duplicated, so we need to add a dummy head node to the original linked list. Then check the values of node, if it’s duplicated just skip the node and redirect the pointer to next node.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/28/Leetcode-207-Course-Schedule/" itemprop="url">
-                  [Leetcode]207. Course Schedule
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-28T14:28:50-04:00" content="2016-05-28">
-              2016-05-28
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/28/Leetcode-207-Course-Schedule/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/28/Leetcode-207-Course-Schedule/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/28/Leetcode-207-Course-Schedule/" class="leancloud_visitors" data-flag-title="[Leetcode]207. Course Schedule">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="leancloud-visitors-count"></span>
-               <span class="post-meta-item-text">Views </span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>There are a total of <em>n</em> courses you have to take, labeled from <code>0</code> to <code>n - 1</code>.</p>
-<p>Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed as a pair: <code>[0,1]</code></p>
-<p>Given the total number of courses and a list of prerequisite <strong>pairs</strong>, is it possible for you to finish all courses?</p>
-<p>For example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2, [[1,0]]</span><br></pre></td></tr></table></figure>
-<p>There are a total of 2 courses to take. To take course 1 you should have finished course 0. So it is possible.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2, [[1,0],[0,1]]</span><br></pre></td></tr></table></figure>
-<p>There are a total of 2 courses to take. To take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So it is impossible.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/28/Leetcode-207-Course-Schedule/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1166,7 +1187,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1183,7 +1204,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

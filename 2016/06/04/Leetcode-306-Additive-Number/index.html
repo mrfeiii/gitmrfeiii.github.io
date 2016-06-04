@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, tengfei, tengfei.tech, notes" />
+  <meta name="keywords" content="Leetcode,Algorithm,DFS,String," />
 
 
 
@@ -84,15 +84,19 @@
 
 
 
-<meta name="description" content="Embracing The Unknown.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tengfei's Notes">
-<meta property="og:url" content="http://tengfei.tech/tags/Hash-Table/index.html">
+<meta name="description" content="QuestionAdditive number is a string whose digits can form additive sequence.
+A valid additive sequence should contain at least three numbers. Except for the first two numbers, each subsequent number i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Leetcode]306. Additive Number">
+<meta property="og:url" content="http://tengfei.tech/2016/06/04/Leetcode-306-Additive-Number/index.html">
 <meta property="og:site_name" content="Tengfei's Notes">
-<meta property="og:description" content="Embracing The Unknown.">
+<meta property="og:description" content="QuestionAdditive number is a string whose digits can form additive sequence.
+A valid additive sequence should contain at least three numbers. Except for the first two numbers, each subsequent number i">
+<meta property="og:updated_time" content="2016-06-04T21:35:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tengfei's Notes">
-<meta name="twitter:description" content="Embracing The Unknown.">
+<meta name="twitter:title" content="[Leetcode]306. Additive Number">
+<meta name="twitter:description" content="QuestionAdditive number is a string whose digits can form additive sequence.
+A valid additive sequence should contain at least three numbers. Except for the first two numbers, each subsequent number i">
 
 
 
@@ -110,7 +114,7 @@
   };
 </script>
 
-  <title> Tag: Hash Table | Tengfei's Notes </title>
+  <title> [Leetcode]306. Additive Number | Tengfei's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -140,7 +144,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -413,46 +417,209 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Hash Table
-        <small>Tag</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [Leetcode]306. Additive Number
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-04T17:10:58-04:00" content="2016-06-04">
+              2016-06-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/04/Leetcode-306-Additive-Number/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/04/Leetcode-306-Additive-Number/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/04/Leetcode-306-Additive-Number/" class="leancloud_visitors" data-flag-title="[Leetcode]306. Additive Number">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+               <span class="post-meta-item-text">Views </span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Additive number is a string whose digits can form additive sequence.</p>
+<p>A valid additive sequence should contain <strong>at least</strong> three numbers. Except for the first two numbers, each subsequent number in the sequence must be the sum of the preceding two.</p>
+<p>For example:</p>
+<p>For example:<br><code>&quot;112358&quot;</code> is an additive number because the digits can form an additive sequence: <code>1, 1, 2, 3, 5, 8</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 + 1 = 2, 1 + 2 = 3, 2 + 3 = 5, 3 + 5 = 8</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;199100199&quot;</span><br></pre></td></tr></table></figure>
+<p> is also an additive number, the additive sequence is: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1, 99, 100, 199</span><br></pre></td></tr></table></figure>
+<p>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 + 99 = 100, 99 + 100 = 199</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong> Numbers in the additive sequence <strong>cannot</strong> have leading zeros, so sequence <code>1, 2, 03</code> or <code>1, 02, 3</code> is invalid.</p>
+<p>Given a string containing only digits <code>&#39;0&#39;-&#39;9&#39;</code>, write a function to determine if it’s an additive number.</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>The idea is quiet basic. </p>
+<ol>
+<li><p>Choose the first number A, it can be the leftmost <strong>1</strong> up to <strong>i</strong> digits. <strong>i&lt;=(L-1)/2</strong>, because the third number should be at least as long as the first number.</p>
+</li>
+<li><p>Choose the second number B, it can be the leftmost <strong>1</strong> up to <strong>j</strong> digits <strong>excluding the first number</strong>. The limit for <strong>j</strong> is in 2 conditions: </p>
+<ul>
+<li><p>if the length of second number( <strong>j - i</strong> ) is longer than the first number( <strong>i</strong> ), then the third number’s length( <strong>L - j</strong> ) should <strong>&gt;= ( j - i )</strong>. </p>
+</li>
+<li><p>if the length of second number( <strong>j - i</strong> ) is shorter than or equals to  the first number( <strong>i</strong> ), then the third number’s length( <strong>L - j</strong> ) should <strong>&gt;= i</strong> . </p>
+</li>
+</ul>
+</li>
+<li>Recursively check if there is one solution.</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAdditiveNumber</span><span class="params">(String num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> L = num.length();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= (L-<span class="number">1</span>)/<span class="number">2</span> ; i++ )&#123;  <span class="comment">// Length of A is from 1 to (L-1)/2. </span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>( num.charAt(<span class="number">0</span>) == <span class="string">'0'</span> &amp;&amp; i&gt;=<span class="number">2</span> ) <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// Length of B is from 1 to L-(A+B),and L-(A+B) &gt;= max(A,B)</span></span><br><span class="line">            <span class="keyword">for</span>( <span class="keyword">int</span> j = i+<span class="number">1</span>; (L-j) &gt;= i &amp;&amp; (L-j) &gt;= j-i ; j++ )&#123; </span><br><span class="line">         </span><br><span class="line">              <span class="keyword">if</span>( num.charAt(i) == <span class="string">'0'</span> &amp;&amp; j-i&gt;=<span class="number">2</span> ) <span class="keyword">break</span>;      </span><br><span class="line">              </span><br><span class="line">              <span class="keyword">long</span> A = Long.parseLong( num.substring(<span class="number">0</span>,i) );</span><br><span class="line">              <span class="keyword">long</span> B = Long.parseLong( num.substring(i,j) );</span><br><span class="line">              String substr = num.substring(j);</span><br><span class="line">              </span><br><span class="line">              <span class="keyword">if</span>( isAdditive( substr , A, B) == <span class="keyword">true</span> ) <span class="keyword">return</span> <span class="keyword">true</span>; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isAdditive</span><span class="params">(String str, <span class="keyword">long</span> A,<span class="keyword">long</span> B)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( str.equals(<span class="string">""</span>) ) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">long</span> sum = A + B;</span><br><span class="line">        String sumStr = String.valueOf(sum);</span><br><span class="line">        <span class="keyword">if</span>( !str.startsWith(sumStr) ) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> isAdditive( str.substring(sumStr.length()), B, sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/" itemprop="url">
-              
-                <span itemprop="name">[Leetcode]187. Repeated DNA Sequences</span>
-              
-            </a>
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>写得好！朕重重有赏！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatPay.JPG" alt="Tengfei Yang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/zhifubaoPay.JPG" alt="Tengfei Yang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-03T17:02:26-04:00"
-              content="2016-06-03" >
-          06-03
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+          
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
+          
+            <a href="/tags/DFS/" rel="tag">#DFS</a>
+          
+            <a href="/tags/String/" rel="tag">#String</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/04/Leetcode-229-Majority-Element-II/" rel="next" title="[Leetcode]229. Majority Element II">
+                <i class="fa fa-chevron-left"></i> [Leetcode]229. Majority Element II
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -460,6 +627,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/04/Leetcode-306-Additive-Number/"
+           data-title="[Leetcode]306. Additive Number" data-url="http://tengfei.tech/2016/06/04/Leetcode-306-Additive-Number/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -479,8 +654,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -568,6 +752,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -688,6 +883,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
