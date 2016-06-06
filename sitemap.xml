@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tengfei.tech/2016/06/06/Leetcode-69-Sqrt-x-and-50-Pow-x-n/</loc>
+    
+    <lastmod>2016-06-06T22:28:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tengfei.tech/2016/06/06/Leetcode-139-Word-Break/</loc>
+    
+    <lastmod>2016-06-06T20:41:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tengfei.tech/2016/06/04/Leetcode-306-Additive-Number/</loc>
     
     <lastmod>2016-06-04T21:35:44.000Z</lastmod>

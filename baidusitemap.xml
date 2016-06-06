@@ -4,6 +4,58 @@
 
     
   <url>
+    <loc>http://tengfei.tech/2016/06/06/Leetcode-69-Sqrt-x-and-50-Pow-x-n/</loc>
+    <lastmod>2016-06-06T22:28:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>[Leetcode]69. Sqrt(x) and 50. Pow(x, n)</title>
+        <pubTime>2016-06-06T21:38:03.000Z</pubTime>
+        
+        <tag>Leetcode</tag>
+         
+        <tag>Algorithm</tag>
+         
+        <tag>Binary Search</tag>
+         
+        <tag>Math</tag>
+         
+         
+           
+             
+              <breadCrumb title="Algorithm" url="http://tengfei.tech/categories/Algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tengfei.tech/2016/06/06/Leetcode-139-Word-Break/</loc>
+    <lastmod>2016-06-06T20:41:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>[Leetcode]139. Word Break</title>
+        <pubTime>2016-06-06T19:09:39.000Z</pubTime>
+        
+        <tag>Leetcode</tag>
+         
+        <tag>Algorithm</tag>
+         
+        <tag>DP</tag>
+         
+        <tag>String</tag>
+         
+         
+           
+             
+              <breadCrumb title="Algorithm" url="http://tengfei.tech/categories/Algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tengfei.tech/2016/06/04/Leetcode-306-Additive-Number/</loc>
     <lastmod>2016-06-04T21:35:44.000Z</lastmod>
     <data>
@@ -15,9 +67,9 @@
          
         <tag>Algorithm</tag>
          
-        <tag>DFS</tag>
-         
         <tag>String</tag>
+         
+        <tag>DFS</tag>
          
          
            
