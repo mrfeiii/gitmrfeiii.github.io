@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://tengfei.tech/2016/06/11/How-does-looping-order-affect-the-performance-of-a-2D-array/</loc>
+    <lastmod>2016-06-12T00:13:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>How does looping order affect the performance of a 2D array</title>
+        <pubTime>2016-06-11T22:09:22.000Z</pubTime>
+        
+        <tag>2D Array</tag>
+         
+        <tag>Algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="Programming Detail" url="http://tengfei.tech/categories/Programming-Detail/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tengfei.tech/2016/06/06/Leetcode-69-Sqrt-x-and-50-Pow-x-n/</loc>
     <lastmod>2016-06-06T22:28:08.000Z</lastmod>
     <data>
@@ -11,9 +33,9 @@
         <title>[Leetcode]69. Sqrt(x) and 50. Pow(x, n)</title>
         <pubTime>2016-06-06T21:38:03.000Z</pubTime>
         
-        <tag>Leetcode</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
          
         <tag>Binary Search</tag>
          
@@ -37,9 +59,9 @@
         <title>[Leetcode]139. Word Break</title>
         <pubTime>2016-06-06T19:09:39.000Z</pubTime>
         
-        <tag>Leetcode</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
          
         <tag>DP</tag>
          
@@ -63,9 +85,9 @@
         <title>[Leetcode]306. Additive Number</title>
         <pubTime>2016-06-04T21:10:58.000Z</pubTime>
         
-        <tag>Leetcode</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
          
         <tag>String</tag>
          
@@ -89,9 +111,9 @@
         <title>[Leetcode]229. Majority Element II</title>
         <pubTime>2016-06-04T17:39:27.000Z</pubTime>
         
-        <tag>Leetcode</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
          
         <tag>Boyer–Moore majority vote</tag>
          
@@ -113,13 +135,13 @@
         <title>[Leetcode]187. Repeated DNA Sequences</title>
         <pubTime>2016-06-03T21:02:26.000Z</pubTime>
         
+        <tag>Algorithm</tag>
+         
         <tag>Leetcode</tag>
          
         <tag>Bit Manipulate</tag>
          
         <tag>Hash Table</tag>
-         
-        <tag>Algorithm</tag>
          
          
            
@@ -139,9 +161,9 @@
         <title>[Leetcode]31. Next Permutation</title>
         <pubTime>2016-06-03T17:46:15.000Z</pubTime>
         
-        <tag>Leetcode</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
          
         <tag>Array</tag>
          
@@ -187,9 +209,9 @@
         <title>[Leetcode]310. Minimum Height Trees</title>
         <pubTime>2016-06-01T15:53:04.000Z</pubTime>
         
-        <tag>Leetcode</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
          
         <tag>Topological Sort</tag>
          
@@ -211,9 +233,9 @@
         <title>[Leetcode]82. Remove Duplicates from Sorted List II</title>
         <pubTime>2016-05-31T19:09:51.000Z</pubTime>
         
-        <tag>Leetcode</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
          
         <tag>LinkedList</tag>
          
@@ -235,9 +257,9 @@
         <title>[Leetcode]207. Course Schedule</title>
         <pubTime>2016-05-28T18:28:50.000Z</pubTime>
         
-        <tag>Leetcode</tag>
-         
         <tag>Algorithm</tag>
+         
+        <tag>Leetcode</tag>
          
         <tag>Topological Sort</tag>
          

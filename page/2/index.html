@@ -437,6 +437,147 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/" itemprop="url">
+                  [Leetcode]187. Repeated DNA Sequences
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-03T17:02:26-04:00" content="2016-06-03">
+              2016-06-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/03/Leetcode-187-Repeated-DNA-Sequences/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/" class="leancloud_visitors" data-flag-title="[Leetcode]187. Repeated DNA Sequences">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+               <span class="post-meta-item-text">Views </span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, for example: “ACGAATTCCG”. When studying DNA, it is sometimes useful to identify repeated sequences within the DNA.</p>
+<p>Write a function to find all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule.</p>
+<p>For example,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Given s = &quot;AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT&quot;,</span><br><span class="line"></span><br><span class="line">Return:</span><br><span class="line">[&quot;AAAAACCCCC&quot;, &quot;CCCCCAAAAA&quot;].</span><br></pre></td></tr></table></figure>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>We can solve this problem in 2 ways.</p>
+<ol>
+<li><p>Use sliding window to get every 10-letter-long subString of the input string. Store them in a hash set. Every time insert new substring to hash set, check if it’s exist in hash set. If exist, put it in a result hash set. We choose hash set to store the result, because the result need to be unique.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">findRepeatedDnaSequences</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        HashSet&lt;String&gt; subStrings = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">        HashSet&lt;String&gt; repeatedSubstrings = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= s.length()-<span class="number">10</span>; i++)&#123;</span><br><span class="line">            String subS = s.substring(i,i+<span class="number">10</span>);</span><br><span class="line">            <span class="keyword">if</span>( !subStrings.add(subS) )&#123;</span><br><span class="line">                repeatedSubstrings.add(subS);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ArrayList(repeatedSubstrings);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>The solution before is pretty straight forward but need a lot memory to store the sub-strings. We can optimize the algorithm by using bit manipulate. There are only 4 letters, we can use 2 bit to present a letter.  00, 01, 10, 11  stand for A, C, T, G. An integer is 32 bits. so we can use an integer rather than a string to present a substring.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">findRepeatedDnaSequences</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       List&lt;String&gt; result = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">if</span>(s == <span class="keyword">null</span> || s.length() &lt; <span class="number">10</span> )&#123;</span><br><span class="line">           <span class="keyword">return</span> result;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       HashMap&lt;Character,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();</span><br><span class="line">       map.put(<span class="string">'A'</span>,<span class="number">0</span>); <span class="comment">// 00</span></span><br><span class="line">       map.put(<span class="string">'C'</span>,<span class="number">1</span>); <span class="comment">// 01</span></span><br><span class="line">       map.put(<span class="string">'T'</span>,<span class="number">2</span>); <span class="comment">// 10</span></span><br><span class="line">       map.put(<span class="string">'G'</span>,<span class="number">3</span>); <span class="comment">// 11</span></span><br><span class="line">     </span><br><span class="line">       Set&lt;Integer&gt; subStrings = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">       Set&lt;Integer&gt; repeated = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">       <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; s.length(); i++ )&#123;</span><br><span class="line">           temp = (temp &lt;&lt; <span class="number">2</span>) + map.get( s.charAt(i) );</span><br><span class="line">           <span class="keyword">if</span>( i &gt;= <span class="number">9</span> )&#123;</span><br><span class="line">               temp = temp &amp; ( (<span class="number">1</span> &lt;&lt; <span class="number">20</span>) - <span class="number">1</span> );   <span class="comment">// temp &amp; 111111 , filt the last 20 digits. </span></span><br><span class="line">               <span class="keyword">if</span>( subStrings.contains(temp) &amp;&amp; !repeated.contains(temp) )&#123;</span><br><span class="line">                   result.add( s.substring(i-<span class="number">9</span>,i+<span class="number">1</span>) );</span><br><span class="line">                   repeated.add(temp);</span><br><span class="line">               &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                   subStrings.add(temp);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/03/Leetcode-31-Next-Permutation/" itemprop="url">
                   [Leetcode]31. Next Permutation
                 </a>
@@ -980,138 +1121,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/27/动物庄园/" itemprop="url">
-                  动物庄园
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-27T11:48:15-04:00" content="2016-05-27">
-              2016-05-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/读过的书/" itemprop="url" rel="index">
-                    <span itemprop="name">读过的书</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/27/动物庄园/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/动物庄园/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/27/动物庄园/" class="leancloud_visitors" data-flag-title="动物庄园">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="leancloud-visitors-count"></span>
-               <span class="post-meta-item-text">Views </span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://cdn1.snapgram.co/imgs/2016/05/27/animalFarm.md.jpg" alt="animal" title="Animal Farm"></p>
-<p>在我看来，整本书都在讲一个寓意深刻的寓言。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/27/动物庄园/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1157,7 +1166,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1165,7 +1174,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1174,7 +1183,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

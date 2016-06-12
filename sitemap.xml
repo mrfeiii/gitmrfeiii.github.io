@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tengfei.tech/2016/06/11/How-does-looping-order-affect-the-performance-of-a-2D-array/</loc>
+    
+    <lastmod>2016-06-12T00:13:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tengfei.tech/2016/06/06/Leetcode-69-Sqrt-x-and-50-Pow-x-n/</loc>
     
     <lastmod>2016-06-06T22:28:08.000Z</lastmod>
