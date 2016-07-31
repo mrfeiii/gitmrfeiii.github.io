@@ -437,603 +437,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/11/How-does-looping-order-affect-the-performance-of-a-2D-array/" itemprop="url">
-                  How does looping order affect the performance of a 2D array
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-06-11T18:09:22-04:00" content="2016-06-11">
-              2016-06-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Programming-Detail/" itemprop="url" rel="index">
-                    <span itemprop="name">Programming Detail</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/11/How-does-looping-order-affect-the-performance-of-a-2D-array/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/11/How-does-looping-order-affect-the-performance-of-a-2D-array/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/06/11/How-does-looping-order-affect-the-performance-of-a-2D-array/" class="leancloud_visitors" data-flag-title="How does looping order affect the performance of a 2D array">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="leancloud-visitors-count"></span>
-               <span class="post-meta-item-text">Views </span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>How does the order of the loops affect performance when iterating over a 2D array?</p>
-<p>Like the code below:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[][] array = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100</span>][<span class="number">100</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">100</span> ; i++ )&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; <span class="number">100</span> ; j++ )&#123;</span><br><span class="line">        System.out.printlin(array[j][i]); <span class="comment">// column first</span></span><br><span class="line">        System.out.printlin(array[i][j]); <span class="comment">// row first</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Which one is more efficient?</p>
-<h3 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h3><p><strong>It depends on what programming language you are using.</strong></p>
-<p>To answer this question, the first thing you need to know is whether your programming language is <a href="https://en.wikipedia.org/wiki/Row-major_order" target="_blank" rel="external">row-major</a> or column-major. It will decide the way that how does the computer store 2-D array in 1-D array in memory.</p>
-<ul>
-<li>Row-major order is used in <a href="https://en.wikipedia.org/wiki/C_(programming_language" target="_blank" rel="external">C</a>)/<a href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="external">C++</a>/<a href="https://en.wikipedia.org/wiki/Objective-C" target="_blank" rel="external">Objective-C</a> (for C-style arrays), <a href="https://en.wikipedia.org/wiki/Mathematica" target="_blank" rel="external">Mathematica</a>, <a href="https://en.wikipedia.org/wiki/PL/I" target="_blank" rel="external">PL/I</a>, <a href="https://en.wikipedia.org/wiki/Pascal_(programming_language" target="_blank" rel="external">Pascal</a>), <a href="https://en.wikipedia.org/wiki/Speakeasy_(computational_environment" target="_blank" rel="external">Speakeasy</a>), <a href="https://en.wikipedia.org/wiki/SAS_language" target="_blank" rel="external">SAS</a>, and <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language" target="_blank" rel="external">C#</a>)/<a href="https://en.wikipedia.org/wiki/Common_Language_Infrastructure" target="_blank" rel="external">CLI</a>/<a href="https://en.wikipedia.org/wiki/.NET_Framework" target="_blank" rel="external">.Net</a>.</li>
-</ul>
-<ul>
-<li>Column-major order is used in <a href="https://en.wikipedia.org/wiki/Fortran" target="_blank" rel="external">Fortran</a>, <a href="https://en.wikipedia.org/wiki/OpenGL" target="_blank" rel="external">OpenGL</a> and <a href="https://en.wikipedia.org/wiki/OpenGL_ES" target="_blank" rel="external">OpenGL ES</a>, <a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank" rel="external">MATLAB</a>, <a href="https://en.wikipedia.org/wiki/GNU_Octave" target="_blank" rel="external">GNU Octave</a>, <a href="https://en.wikipedia.org/wiki/S-Plus" target="_blank" rel="external">S-Plus</a> <a href="https://en.wikipedia.org/wiki/R_(programming_language" target="_blank" rel="external">R</a>),<a href="https://en.wikipedia.org/wiki/Julia_(programming_language" target="_blank" rel="external">Julia</a>), <a href="https://en.wikipedia.org/wiki/Scilab" target="_blank" rel="external">Scilab</a>.</li>
-</ul>
-<ul>
-<li>A typical alternative is to use <a href="https://en.wikipedia.org/wiki/Iliffe_vector" target="_blank" rel="external">Iliffe vectors</a>, which store elements in the same row contiguously (like row-major order), but not the rows themselves. They are used in <a href="https://en.wikipedia.org/wiki/Java_(programming_language" target="_blank" rel="external">Java</a>), <a href="https://en.wikipedia.org/wiki/Scala_(programming_language" target="_blank" rel="external">Scala</a>) and <a href="https://en.wikipedia.org/wiki/Swift_(programming_language" target="_blank" rel="external">Swift</a>).</li>
-</ul>
-<p>But why does this matter? All memory accesses are the same, right?</p>
-<p><strong><strong>NO. Because of CPU caches.</strong></strong></p>
-<blockquote>
-<p>A <strong>CPU cache</strong> is a hardware <strong>cache</strong> used by the <strong>Central Processing Unit</strong> (<strong>CPU</strong>) of a computer to reduce the average time to access data from the main memory. The <strong>cache</strong> is a smaller, faster memory which stores copies of the data from frequently used main memory locations.</p>
-</blockquote>
-<p>Data from memory gets brought over to the CPU in little chunks (called ‘cache lines’), typically 64 bytes. If you have 4-byte integers, that means you’re getting 16 consecutive integers in a neat little bundle. It’s actually fairly slow to fetch these chunks of memory.</p>
-<p>If you access the data in a consecutive memory order, every time you access a variable, it will directly read from CPU cache. <strong>100*100/16 times fetches from memory.</strong></p>
-<p>But if you access the data in a nonconsecutive memory order, it will fetch the data from memory to CPU cache. <strong>100*100 times fetches from memory.</strong></p>
-<p>It is very obvious that which way is more efficient. </p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/06/Leetcode-69-Sqrt-x-and-50-Pow-x-n/" itemprop="url">
-                  [Leetcode]69. Sqrt(x) and 50. Pow(x, n)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-06-06T17:38:03-04:00" content="2016-06-06">
-              2016-06-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/06/Leetcode-69-Sqrt-x-and-50-Pow-x-n/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/06/Leetcode-69-Sqrt-x-and-50-Pow-x-n/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/06/06/Leetcode-69-Sqrt-x-and-50-Pow-x-n/" class="leancloud_visitors" data-flag-title="[Leetcode]69. Sqrt(x) and 50. Pow(x, n)">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="leancloud-visitors-count"></span>
-               <span class="post-meta-item-text">Views </span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote>
-<p>Implement <code>int sqrt(int x)</code>.</p>
-<p>Compute and return the square root of <em>x</em>.</p>
-<p>Implement pow(<em>x</em>, <em>n</em>).</p>
-</blockquote>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><ul>
-<li><p>For function pow(), the most important axiom we use is <strong>x^n = x^n/2 * x^n/2</strong>.</p>
-<ul>
-<li>we need to consider whether <strong>n</strong> is <strong><em>odd</em></strong> or <strong><em>even</em></strong> number. </li>
-<li>we need to consider whether <strong>n</strong> is <strong><em>n</em>egative</strong> or <strong><em>positive</em></strong> number.</li>
-</ul>
-</li>
-<li><p>One way of calculating square root is to use <a href="https://en.wikipedia.org/wiki/Newton%27s_method" target="_blank" rel="external">Newton’s method</a> to find a solution for the equation, giving the iterative formula: </p>
-<p><img src="https://en.wikipedia.org/api/rest_v1/media/math/render/svg/710c11b9ec4568d1cfff49b7c7d41e0a7829a736" alt=""></p>
-<p>Another way to calculate square root is to use <strong><em>binary search</em></strong>. The square root of <strong>x</strong> must be in <strong>[1,x]</strong>. So we can do binary search from 1 to x.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//pow() function</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&lt;<span class="number">0</span>)&#123;                  <span class="comment">// if x^-n = 1/x^n;</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>/pow(x,-n);  </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pow(x,n); </span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">pow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span></span>&#123; <span class="comment">// time complexity from O(n) -&gt; O(logn);</span></span><br><span class="line">        <span class="keyword">if</span>( n == <span class="number">0</span> )&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">double</span> v = pow(x,n/<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span>(n % <span class="number">2</span> == <span class="number">0</span>)&#123;   <span class="comment">// if n is EVEN , x^n == x^(n/2) * x^(n/2);</span></span><br><span class="line">            <span class="keyword">return</span> v*v;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> v*v*x; <span class="comment">// if n is ODD, x^n = x* x^(n/2) * x^(n/2);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//square root function suing Binary Search</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( x == <span class="number">0</span> || x == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end = x;</span><br><span class="line">        <span class="keyword">int</span> mid = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>( start &lt;= end )&#123;</span><br><span class="line">           mid = start + (end - start)/<span class="number">2</span>;</span><br><span class="line">           <span class="keyword">if</span>( mid &lt; x/mid)&#123;</span><br><span class="line">               <span class="keyword">if</span>( mid + <span class="number">1</span> &gt; x/(mid + <span class="number">1</span>) )&#123;  <span class="comment">// if x between mid and mid+1, return mid</span></span><br><span class="line">                   <span class="keyword">return</span> mid;</span><br><span class="line">               &#125;</span><br><span class="line">               start = mid + <span class="number">1</span>;</span><br><span class="line">           &#125;<span class="keyword">else</span> <span class="keyword">if</span> ( mid &gt; x/mid )&#123;</span><br><span class="line">               end = mid - <span class="number">1</span>;</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               <span class="keyword">return</span> mid;</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//square root function suing Newton's methond.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x&lt;<span class="number">2</span>) <span class="keyword">return</span> x;</span><br><span class="line">        <span class="keyword">long</span> r = x/<span class="number">2</span>;  </span><br><span class="line">        <span class="keyword">while</span> (r*r &gt; x)&#123;</span><br><span class="line">            r = (r + x/r) / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/06/Leetcode-139-Word-Break/" itemprop="url">
-                  [Leetcode]139. Word Break
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-06-06T15:09:39-04:00" content="2016-06-06">
-              2016-06-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/06/Leetcode-139-Word-Break/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/06/Leetcode-139-Word-Break/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/06/06/Leetcode-139-Word-Break/" class="leancloud_visitors" data-flag-title="[Leetcode]139. Word Break">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="leancloud-visitors-count"></span>
-               <span class="post-meta-item-text">Views </span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><p>Given a string <em>s</em> and a dictionary of words <em>dict</em>, determine if <em>s</em> can be segmented into a space-separated sequence of one or more dictionary words.</p>
-<p>For example, given</p>
-<p>For example, given<br><em>s</em> = <code>&quot;leetcode&quot;</code>,</p>
-<p>For example, given<br><em>s</em> = <code>&quot;leetcode&quot;</code>,<br><em>dict</em> = <code>[&quot;leet&quot;, &quot;code&quot;]</code>.</p>
-<p>Return true because <code>&quot;leetcode&quot;</code> can be segmented as <code>&quot;leet code&quot;</code>.</p>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>The core of this question is substring matching. </p>
-<p>We can use dynamic programming to store if the substring exist in word dic.</p>
-<blockquote>
-<p>F(0,N) = F(0,i) &amp;&amp; F(i,j) &amp;&amp; F(j,N)</p>
-</blockquote>
-<p>First of all, we get the words’ length range in dictionary. Then use a boolean array to store if from 0 to this position can be segmented into a space-separated sequence of one or more dictionary words. </p>
-<p>If dp[i] == true, we search substring of index form <strong>i</strong> to <strong>j</strong> ( j In <strong>[ i+minWordLength, i+maxWordLength]</strong> ). If s[i,j] exist in Dic, set dp[j] = true.</p>
-<p>Finally, dp[s.length()] is the result.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">wordBreak</span><span class="params">(String s, Set&lt;String&gt; wordDict)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( s == <span class="keyword">null</span> || s.length() == <span class="number">0</span> || wordDict.size() == <span class="number">0</span> )&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>( wordDict.contains(s) )&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> maxWordLength = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minWordLength = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span>( String str : wordDict )&#123;</span><br><span class="line">            maxWordLength = Math.max(maxWordLength, str.length() );</span><br><span class="line">            minWordLength = Math.min(minWordLength, str.length() );</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">boolean</span>[] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()+<span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= s.length(); i++ )&#123;</span><br><span class="line">            <span class="keyword">if</span>( dp[i] == <span class="keyword">false</span> ) <span class="keyword">continue</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+minWordLength; j &lt;= i+maxWordLength &amp;&amp; j &lt;= s.length(); j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>( dp[j] == <span class="keyword">true</span> ) <span class="keyword">continue</span>;</span><br><span class="line">                String word = s.substring(i,j);</span><br><span class="line">                <span class="keyword">if</span>( wordDict.contains(word) )&#123;</span><br><span class="line">                    dp[j] = <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dp[s.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/04/Leetcode-306-Additive-Number/" itemprop="url">
-                  [Leetcode]306. Additive Number
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-06-04T17:10:58-04:00" content="2016-06-04">
-              2016-06-04
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/04/Leetcode-306-Additive-Number/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/04/Leetcode-306-Additive-Number/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/06/04/Leetcode-306-Additive-Number/" class="leancloud_visitors" data-flag-title="[Leetcode]306. Additive Number">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="leancloud-visitors-count"></span>
-               <span class="post-meta-item-text">Views </span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Additive number is a string whose digits can form additive sequence.</p>
-<p>A valid additive sequence should contain <strong>at least</strong> three numbers. Except for the first two numbers, each subsequent number in the sequence must be the sum of the preceding two.</p>
-<p>For example:</p>
-<p>For example:<br><code>&quot;112358&quot;</code> is an additive number because the digits can form an additive sequence: <code>1, 1, 2, 3, 5, 8</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 + 1 = 2, 1 + 2 = 3, 2 + 3 = 5, 3 + 5 = 8</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;199100199&quot;</span><br></pre></td></tr></table></figure>
-<p> is also an additive number, the additive sequence is: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1, 99, 100, 199</span><br></pre></td></tr></table></figure>
-<p>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 + 99 = 100, 99 + 100 = 199</span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong> Numbers in the additive sequence <strong>cannot</strong> have leading zeros, so sequence <code>1, 2, 03</code> or <code>1, 02, 3</code> is invalid.</p>
-<p>Given a string containing only digits <code>&#39;0&#39;-&#39;9&#39;</code>, write a function to determine if it’s an additive number.</p>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>The idea is quiet basic. </p>
-<ol>
-<li><p>Choose the first number A, it can be the leftmost <strong>1</strong> up to <strong>i</strong> digits. <strong>i&lt;=(L-1)/2</strong>, because the third number should be at least as long as the first number.</p>
-</li>
-<li><p>Choose the second number B, it can be the leftmost <strong>1</strong> up to <strong>j</strong> digits <strong>excluding the first number</strong>. The limit for <strong>j</strong> is in 2 conditions: </p>
-<ul>
-<li><p>if the length of second number( <strong>j - i</strong> ) is longer than the first number( <strong>i</strong> ), then the third number’s length( <strong>L - j</strong> ) should <strong>&gt;= ( j - i )</strong>. </p>
-</li>
-<li><p>if the length of second number( <strong>j - i</strong> ) is shorter than or equals to  the first number( <strong>i</strong> ), then the third number’s length( <strong>L - j</strong> ) should <strong>&gt;= i</strong> . </p>
-</li>
-</ul>
-</li>
-<li>Recursively check if there is one solution.</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAdditiveNumber</span><span class="params">(String num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> L = num.length();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= (L-<span class="number">1</span>)/<span class="number">2</span> ; i++ )&#123;  <span class="comment">// Length of A is from 1 to (L-1)/2. </span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>( num.charAt(<span class="number">0</span>) == <span class="string">'0'</span> &amp;&amp; i&gt;=<span class="number">2</span> ) <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// Length of B is from 1 to L-(A+B),and L-(A+B) &gt;= max(A,B)</span></span><br><span class="line">            <span class="keyword">for</span>( <span class="keyword">int</span> j = i+<span class="number">1</span>; (L-j) &gt;= i &amp;&amp; (L-j) &gt;= j-i ; j++ )&#123; </span><br><span class="line">         </span><br><span class="line">              <span class="keyword">if</span>( num.charAt(i) == <span class="string">'0'</span> &amp;&amp; j-i&gt;=<span class="number">2</span> ) <span class="keyword">break</span>;      </span><br><span class="line">              </span><br><span class="line">              <span class="keyword">long</span> A = Long.parseLong( num.substring(<span class="number">0</span>,i) );</span><br><span class="line">              <span class="keyword">long</span> B = Long.parseLong( num.substring(i,j) );</span><br><span class="line">              String substr = num.substring(j);</span><br><span class="line">              </span><br><span class="line">              <span class="keyword">if</span>( isAdditive( substr , A, B) == <span class="keyword">true</span> ) <span class="keyword">return</span> <span class="keyword">true</span>; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isAdditive</span><span class="params">(String str, <span class="keyword">long</span> A,<span class="keyword">long</span> B)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( str.equals(<span class="string">""</span>) ) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">long</span> sum = A + B;</span><br><span class="line">        String sumStr = String.valueOf(sum);</span><br><span class="line">        <span class="keyword">if</span>( !str.startsWith(sumStr) ) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> isAdditive( str.substring(sumStr.length()), B, sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/06/04/Leetcode-229-Majority-Element-II/" itemprop="url">
                   [Leetcode]229. Majority Element II
                 </a>
@@ -1152,11 +555,578 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/" itemprop="url">
+                  [Leetcode]187. Repeated DNA Sequences
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-03T17:02:26-04:00" content="2016-06-03">
+              2016-06-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/03/Leetcode-187-Repeated-DNA-Sequences/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/03/Leetcode-187-Repeated-DNA-Sequences/" class="leancloud_visitors" data-flag-title="[Leetcode]187. Repeated DNA Sequences">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+               <span class="post-meta-item-text">Views </span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, for example: “ACGAATTCCG”. When studying DNA, it is sometimes useful to identify repeated sequences within the DNA.</p>
+<p>Write a function to find all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule.</p>
+<p>For example,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Given s = &quot;AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT&quot;,</span><br><span class="line"></span><br><span class="line">Return:</span><br><span class="line">[&quot;AAAAACCCCC&quot;, &quot;CCCCCAAAAA&quot;].</span><br></pre></td></tr></table></figure>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>We can solve this problem in 2 ways.</p>
+<ol>
+<li><p>Use sliding window to get every 10-letter-long subString of the input string. Store them in a hash set. Every time insert new substring to hash set, check if it’s exist in hash set. If exist, put it in a result hash set. We choose hash set to store the result, because the result need to be unique.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">findRepeatedDnaSequences</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        HashSet&lt;String&gt; subStrings = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">        HashSet&lt;String&gt; repeatedSubstrings = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= s.length()-<span class="number">10</span>; i++)&#123;</span><br><span class="line">            String subS = s.substring(i,i+<span class="number">10</span>);</span><br><span class="line">            <span class="keyword">if</span>( !subStrings.add(subS) )&#123;</span><br><span class="line">                repeatedSubstrings.add(subS);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ArrayList(repeatedSubstrings);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>The solution before is pretty straight forward but need a lot memory to store the sub-strings. We can optimize the algorithm by using bit manipulate. There are only 4 letters, we can use 2 bit to present a letter.  00, 01, 10, 11  stand for A, C, T, G. An integer is 32 bits. so we can use an integer rather than a string to present a substring.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">findRepeatedDnaSequences</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       List&lt;String&gt; result = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">if</span>(s == <span class="keyword">null</span> || s.length() &lt; <span class="number">10</span> )&#123;</span><br><span class="line">           <span class="keyword">return</span> result;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       HashMap&lt;Character,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();</span><br><span class="line">       map.put(<span class="string">'A'</span>,<span class="number">0</span>); <span class="comment">// 00</span></span><br><span class="line">       map.put(<span class="string">'C'</span>,<span class="number">1</span>); <span class="comment">// 01</span></span><br><span class="line">       map.put(<span class="string">'T'</span>,<span class="number">2</span>); <span class="comment">// 10</span></span><br><span class="line">       map.put(<span class="string">'G'</span>,<span class="number">3</span>); <span class="comment">// 11</span></span><br><span class="line">     </span><br><span class="line">       Set&lt;Integer&gt; subStrings = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">       Set&lt;Integer&gt; repeated = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">       <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; s.length(); i++ )&#123;</span><br><span class="line">           temp = (temp &lt;&lt; <span class="number">2</span>) + map.get( s.charAt(i) );</span><br><span class="line">           <span class="keyword">if</span>( i &gt;= <span class="number">9</span> )&#123;</span><br><span class="line">               temp = temp &amp; ( (<span class="number">1</span> &lt;&lt; <span class="number">20</span>) - <span class="number">1</span> );   <span class="comment">// temp &amp; 111111 , filt the last 20 digits. </span></span><br><span class="line">               <span class="keyword">if</span>( subStrings.contains(temp) &amp;&amp; !repeated.contains(temp) )&#123;</span><br><span class="line">                   result.add( s.substring(i-<span class="number">9</span>,i+<span class="number">1</span>) );</span><br><span class="line">                   repeated.add(temp);</span><br><span class="line">               &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                   subStrings.add(temp);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/03/Leetcode-31-Next-Permutation/" itemprop="url">
+                  [Leetcode]31. Next Permutation
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-03T13:46:15-04:00" content="2016-06-03">
+              2016-06-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/03/Leetcode-31-Next-Permutation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/03/Leetcode-31-Next-Permutation/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/03/Leetcode-31-Next-Permutation/" class="leancloud_visitors" data-flag-title="[Leetcode]31. Next Permutation">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+               <span class="post-meta-item-text">Views </span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.</p>
+<p>If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).</p>
+<p>The replacement must be in-place, do not allocate extra memory.</p>
+<p>Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.</p>
+<p>Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.<br><code>1,2,3</code> → <code>1,3,2</code></p>
+<p>Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.<br><code>1,2,3</code> → <code>1,3,2</code><br><code>3,2,1</code> → <code>1,2,3</code></p>
+<p>Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.<br><code>1,2,3</code> → <code>1,3,2</code><br><code>3,2,1</code> → <code>1,2,3</code><br><code>1,1,5</code> → <code>1,5,1</code></p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>This meaning of this problem is to find the next closest number that greater than current number. If the number is in descending order, it means it’s already the biggest permutation, then sort it in ascending order.</p>
+<p>There are some principles we should to know before start to solve this problem:</p>
+<ol>
+<li>Descending order is the biggest permutation of a set of numbers.</li>
+<li>On the contrary, ascending is the smallest permutation.</li>
+<li>To minimize the increased amount, we have to make the highest changed position increase as less as we can.</li>
+</ol>
+<p>Following the principles we can solve this problem in 3 steps:</p>
+<ol>
+<li>Start from tail, find the first element with index i that satisfy num[i-1] &lt; num[i]. So from num[i] to num[n-1] is in descending order. </li>
+<li>In order to minimize the increase amount, we need to find a closest number with num[i-1] in the descending list to exchange with num[i-1].</li>
+<li>After exchange, from num[i] to num[n-1] is still in descending number, it means it’s in the greatest  permutation. In order to keep the whole number increase minimum,  remember we just increased the highest position? Then we need to make the remaining part of as small as possible, so we just reversely sort the num[ i , n-1 ]. </li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">nextPermutation</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums == <span class="keyword">null</span> || nums.length &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> numberLength = nums.length;</span><br><span class="line">        <span class="keyword">int</span> firstIndex = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> secondIndex = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> exchangeNumberIndex = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = numberLength-<span class="number">1</span>; i &gt;<span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>( nums[i-<span class="number">1</span>] &lt; nums[i])&#123;</span><br><span class="line">                firstIndex = i-<span class="number">1</span>;</span><br><span class="line">                secondIndex= i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>( firstIndex == -<span class="number">1</span> )&#123;</span><br><span class="line">            reverse(<span class="number">0</span>,numberLength-<span class="number">1</span>,nums);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = numberLength-<span class="number">1</span> ; i &gt;= secondIndex ; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>( nums[i] &gt; nums[firstIndex] )&#123;</span><br><span class="line">                exchangeNumberIndex = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(firstIndex, exchangeNumberIndex, nums);</span><br><span class="line">        reverse(secondIndex,numberLength-<span class="number">1</span>,nums);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m, <span class="keyword">int</span>[] numbers)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = numbers[n];</span><br><span class="line">        numbers[n] = numbers[m];</span><br><span class="line">        numbers[m] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> startIndex, <span class="keyword">int</span> endIndex, <span class="keyword">int</span>[] numbers)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>( startIndex &lt; endIndex )&#123;</span><br><span class="line">            swap(startIndex++,endIndex--,numbers);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/01/Leetcode-310-Minimum-Height-Trees/" itemprop="url">
+                  [Leetcode]310. Minimum Height Trees
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-01T11:53:04-04:00" content="2016-06-01">
+              2016-06-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/01/Leetcode-310-Minimum-Height-Trees/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/01/Leetcode-310-Minimum-Height-Trees/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/01/Leetcode-310-Minimum-Height-Trees/" class="leancloud_visitors" data-flag-title="[Leetcode]310. Minimum Height Trees">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+               <span class="post-meta-item-text">Views </span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>For a undirected graph with tree characteristics, we can choose any node as the root. The result graph is then a rooted tree. Among all possible rooted trees, those with minimum height are called minimum height trees (MHTs). Given such a graph, write a function to find all the MHTs and return a list of their root labels.</p>
+<p><strong>Format</strong><br>The graph contains <code>n</code> nodes which are labeled from <code>0</code> to <code>n - 1</code>. You will be given the number <code>n</code> and a list of undirected <code>edges</code> (each edge is a pair of labels).</p>
+<p>You can assume that no duplicate edges will appear in <code>edges</code>. Since all edges are undirected, <code>[0, 1]</code> is the same as <code>[1, 0]</code> and thus will not appear together in <code>edges</code>.</p>
+<p><strong>Example 1:</strong></p>
+<p>Given <code>n = 4</code>, <code>edges = [[1, 0], [1, 2], [1, 3]]</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  0</span><br><span class="line">  |</span><br><span class="line">  1</span><br><span class="line"> / \</span><br><span class="line">2   3</span><br></pre></td></tr></table></figure>
+<p>return <code>[1]</code></p>
+<p><strong>Example 2:</strong></p>
+<p>Given <code>n = 6</code>, <code>edges = [[0, 3], [1, 3], [2, 3], [4, 3], [5, 4]]</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">0  1  2</span><br><span class="line"> \ | /</span><br><span class="line">   3</span><br><span class="line">   |</span><br><span class="line">   4</span><br><span class="line">   |</span><br><span class="line">   5</span><br></pre></td></tr></table></figure>
+<p>return <code>[3, 4]</code></p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>First of all, we can think a simple situation. What’s the MHT for a one path tree? The answer is pretty straight forward,  the middle 1 or 2 points, depends on even or odd nodes the tree has, is the  MHTs.</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/01/Leetcode-310-Minimum-Height-Trees/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/" itemprop="url">
+                  [Leetcode]82. Remove Duplicates from Sorted List II
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-31T15:09:51-04:00" content="2016-05-31">
+              2016-05-31
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/" class="leancloud_visitors" data-flag-title="[Leetcode]82. Remove Duplicates from Sorted List II">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+               <span class="post-meta-item-text">Views </span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only <em>distinct</em> numbers from the original list.</p>
+<p>For example,</p>
+<p>For example,<br>Given <code>1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5</code>, return <code>1-&gt;2-&gt;5</code>.</p>
+<p>For example,<br>Given <code>1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5</code>, return <code>1-&gt;2-&gt;5</code>.<br>Given <code>1-&gt;1-&gt;1-&gt;2-&gt;3</code>, return <code>2-&gt;3</code>.</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>Because the head of linked list could be duplicated, so we need to add a dummy head node to the original linked list. Then check the values of node, if it’s duplicated just skip the node and redirect the pointer to next node.</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/31/Leetcode-82-Remove-Duplicates-from-Sorted-List-II/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1197,7 +1167,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
